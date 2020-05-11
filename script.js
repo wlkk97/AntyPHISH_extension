@@ -1,4 +1,13 @@
-//var currentLocation = document.domain;
-//document.getElementsByClassName("domain_result")[0].innerHTML = currentLocation;
-
-//window.location.href
+// chrome.runtime.sendMessage('Hello World!');
+// chrome.runtime.onMessage.addListener(
+//     (request, sender, sendResponse) => {
+//       if (request.message === "hi")
+//         alert('dziala');
+//     });
+chrome.extension.onConnect.addListener(function(port) {
+    console.log("Connected .....");
+    port.onMessage.addListener(function(msg) {
+         console.log("message recieved" + msg);
+         port.postMessage("Hi Popup.js");
+    });
+})

@@ -2,7 +2,7 @@
     font-family: 'Roboto';
     font-style: normal;
     src: url('../fonts/Roboto.woff2') format('woff2');
-  }
+}
 
 body{
     background: rgb(66,113,63);
@@ -19,7 +19,7 @@ body{
     column-gap: 20px;
 }
   
-.tile{
+.tile {
     border-radius: 3px;
     padding: 10px;
     background-color: #484848;
@@ -65,6 +65,7 @@ hr{
 .ip_question{
     font-weight: 700;
     font-size: 18px;
+
 }
 
 .btn_center{
@@ -81,10 +82,6 @@ hr{
     background: rgb(55,153,48);
     background: linear-gradient(0deg, rgba(55,153,48,1) 0%, rgba(111,242,91,1) 100%);
     text-align: center;
-}
-
-.btn_scan:hover{
-    opacity: 0.8;
 }
 
 .btn_text{
