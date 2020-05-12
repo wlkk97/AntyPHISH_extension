@@ -15,6 +15,9 @@
 chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     var tab = tabs[0];
     var url = new URL(tab.url)
-    var domain = url.hostname
-    document.getElementsByClassName("domain_hostname")[0].innerHTML= domain;
+    let domain = {
+        url: url.hostname
+    }
+    document.getElementsByClassName("domain_hostname")[0].innerHTML= domain.url;
+    chrome.tabs.sendMessage(tab.id, 'test');
 });
