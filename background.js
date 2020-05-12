@@ -1,4 +1,3 @@
-// var link ='"' +  document.domain + '"';
 // $.ajax({
 //     headers: { 
 //         'Accept': 'application/json',
@@ -45,7 +44,6 @@ chrome.runtime.onMessage.addListener( function(request,sender,sendResponse)
 */
 
 /*chrome.runtime.onMessage.addListener(gotMessage);
-
 function gotMessage(message, sender, sendReponse) {
     console.log(message);
 }*/
@@ -67,6 +65,26 @@ function gotMessage(message, sender, sendReponse) {
 chrome.runtime.onMessage.addListener(
     (request, sender, sendResponse) => {
     if (request.message === request.message )
-        sendResponse({message: "poprawnie otrzymano adres URL: " + request.message});
-        console.log(request.message)
+        sendResponse({message: "Got it!"});
+        console.log(request.message);
+        var link ='"' +  request.message + '"';
+        let domain = {
+            "url": request.message
+        }
+        $.ajax({
+        headers: { 
+            'Accept': 'application/json',
+            'Content-Type': 'application/json' 
+        },
+        type: "POST",
+        url: "https://phish.arqsz.net/api/v1/verify/all",
+        data: JSON.stringify(domain),
+        success: handleData
+        });
+        function handleData(data){
+            console.log(data.result);
+            chrome.runtime.sendMessage({message: data.result}, (response) => {
+                console.log(response.message);
+            });
+        }
     }); 
