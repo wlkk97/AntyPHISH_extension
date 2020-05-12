@@ -16,7 +16,6 @@
 /*
 //usuniete z powodu bo nie jest potrzebne, przynajmniej na razie ~Dawid   | to chyba pokazuje adres przy kliknieciu we wtyczke
 chrome.runtime.onMessage.addListener(gotMessage);
-
 function gotMessage(message, sender, sendReponse) {
     console.log(message);
 }
@@ -42,6 +41,6 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
 
 //wysyla do background (lub ogolnie wszedzie)
 console.log('ELO ELO: ' + document.URL)
-chrome.runtime.sendMessage({message: 'od script.js:  ' + document.URL}, (response) => {
-    console.log(document.URL);
+chrome.runtime.sendMessage({message: + window.location.hostname}, (response) => {
+    console.log(window.location.hostname);
 });

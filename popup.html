@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
 
-    <link rel="stylesheet" href="style.css">
-    <script src="popup.js"></script>
-  </head>
-  <body>
+<head>
 
-    <div class="nav">
-      <div class="tile">
-        <img src="img/www.png" alt="">
-      </div>
-      <div class="tile">
-        <img src="img/stop.png" alt="">
-      </div>
-      <div class="tile">
-        <img src="img/report.png" alt="">
-      </div>
+  <link rel="stylesheet" href="style.css">
+  <script src="popup.js"></script>
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="tile">
+      <img src="img/www.png" alt="">
     </div>
-
-    <hr>
-
-    <div class="domain_name">
-        <span class="domain_text"><span class="domain_hostname">domain.name</span> seems to be:</span></br>
-        <span class="domain_result">OK</span>
+    <div class="tile">
+      <img src="img/stop.png" alt="">
     </div>
-
-    <hr>
-
-    <div class="ip_check">
-        Domain IP: <span class="ip_domain">192.168.1.10</span></br>
-        Domain country: <span class="ip_country">ENG</span></br>
-        <span class="ip_question">Not Sure?</span>
+    <div class="tile">
+      <img src="img/report.png" alt="">
     </div>
-    <div class="btn_center">
-        <div class="btn_scan">
-            <span class="btn_text">SCAN</span>
-            <!-- <img src="img/gif.gif" alt=""> -->
-        </div>
+  </div>
+
+  <hr>
+
+  <div class="domain_name">
+    <span class="domain_text"><span class="domain_hostname">domain.name</span> seems to be:</span></br>
+    <span class="domain_result" id="result">OK</span>
+  </div>
+
+  <hr>
+
+  <div class="ip_check">
+    Domain IP: <span class="ip_domain">192.168.1.10</span></br>
+    Domain country: <span class="ip_country">ENG</span></br>
+    <span class="ip_question">Not Sure?</span>
+  </div>
+  <div class="btn_center">
+    <div class="btn_scan">
+      <span class="btn_text">SCAN</span>
     </div>
-  </body>
+    <img src="img/gif.gif" alt="gif" class="gif">
+  </div>
+</body>
+
 </html>
