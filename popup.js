@@ -12,12 +12,25 @@
 //     console.log("message recieved" + msg);
 // });
 
-chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+
+
+
+chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => { 
     var tab = tabs[0];
     var url = new URL(tab.url)
     let domain = {
         url: url.hostname
     }
-    document.getElementsByClassName("domain_hostname")[0].innerHTML= domain.url;
-    chrome.tabs.sendMessage(tab.id, 'test');
+    document.getElementsByClassName("domain_hostname")[0].innerHTML= domain.url;  //wysyla do pliku html ktory wyswietla
+    chrome.tabs.sendMessage(tab.id, domain.url);  //wysyla domene do script.js na klikniecie wtyczki. tab.url zamiast domaiin.url tez dziala
+    
+    /*
+    //wysylanie do background.js adresu url
+    chrome.runtime.sendMessage({message: domain.url}, (response) => {
+        console.log(response.message);
+    });
+    */
 });
+
+
+
